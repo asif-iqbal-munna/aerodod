@@ -21,7 +21,7 @@ const Banner = () => {
           <h1 className="text-3xl md:text-5xl">
             Travel is the only thing you buy that makes you richer
           </h1>
-          <h3 className="text-lg md:text-2xl mt-6  md:px-6">
+          <h3 className="text-lg md:text-2xl mt-6  md:px-12">
             It feels good to be lost in the right direction and also from right
             place
           </h3>
