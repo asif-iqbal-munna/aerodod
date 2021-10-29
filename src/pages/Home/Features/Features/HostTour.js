@@ -30,7 +30,7 @@ const HostTour = () => {
               </p></div>
               
               <Button variant="contained">
-                Contained
+                Host
               </Button>
             </div>
           </Grid>

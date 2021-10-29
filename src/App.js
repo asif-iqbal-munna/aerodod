@@ -1,12 +1,14 @@
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./pages/Home/Home/Home";
+import { colors } from "@material-ui/core";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { red } from "@mui/material/colors";
 
 const theme = createTheme({
   palette: {
-    primary: red,
+    primary: {
+      main: colors.green[500],
+    },
   },
 });
 

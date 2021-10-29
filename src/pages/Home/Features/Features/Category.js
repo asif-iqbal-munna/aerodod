@@ -7,7 +7,7 @@ const Category = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/liveanywhere")
+      .get("https://radiant-cove-26466.herokuapp.com/liveanywhere")
       .then((res) => setCategories(res.data))
       .catch((err) => console.log(err));
   }, []);

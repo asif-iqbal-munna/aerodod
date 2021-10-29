@@ -7,7 +7,7 @@ const DiscoverThings = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/discoverthings")
+      .get("https://radiant-cove-26466.herokuapp.com/discoverthings")
       .then((res) => setdiscoverThings(res.data))
       .catch((err) => console.log(err));
   }, []);
@@ -33,10 +33,10 @@ const DiscoverThings = () => {
                 className="w-100 h-96 rounded-2xl"
               />
               <div className="bg-gray-100 rounded-2xl p-2">
-                <h4 className="pt-2 text-xl capitalize font-bold">
+                <h4 className="pt-2 text-lg capitalize font-bold">
                   {discoverthing?.title}
                 </h4>
-                <h4 className="pt-2 text-sm capitalize font-bold">
+                <h4 className="pt-2 pb-2 text-xs capitalize font-bold">
                   {discoverthing?.subtitle}
                 </h4>
               </div>
