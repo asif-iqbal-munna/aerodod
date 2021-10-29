@@ -11,6 +11,7 @@ import {
 import React, { useState } from "react";
 import { AccountCircle } from "@mui/icons-material";
 import { Link } from "react-router-dom";
+import useAuth from "../../../hooks/useAuth";
 
 const Header = () => {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -22,6 +23,9 @@ const Header = () => {
   const handleClose = () => {
     setAnchorEl(null);
   };
+
+  const { user } = useAuth();
+
   return (
     <Box
       sx={{
@@ -63,6 +67,7 @@ const Header = () => {
                 open={Boolean(anchorEl)}
                 onClose={handleClose}
               >
+                <MenuItem>{user?.displayName ? user.displayName : ""}</MenuItem>
                 <MenuItem>
                   <Link to="/mytours">My Tours</Link>
                 </MenuItem>

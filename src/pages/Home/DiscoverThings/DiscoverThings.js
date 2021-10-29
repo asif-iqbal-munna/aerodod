@@ -24,6 +24,7 @@ const DiscoverThings = () => {
             xs={12}
             sm={6}
             md={4}
+            key={discoverthing._id}
             className="flex justify-center rounded-2xl"
           >
             <div>

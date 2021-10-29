@@ -8,6 +8,7 @@ import MyBookedTours from "./pages/MyBookedTours/MyBookedTours";
 import { NotFound } from "http-errors";
 import BookTour from "./pages/BookTour/BookTour";
 import Login from "./pages/Login/Login";
+import AuthProvider from "./Context/AuthProvider";
 
 const theme = createTheme({
   palette: {
@@ -19,31 +20,33 @@ const theme = createTheme({
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <Router>
-        <Header />
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route path="/home">
-            <Home />
-          </Route>
-          <Route path="/mytours">
-            <MyBookedTours />
-          </Route>
-          <Route path="/booktour">
-            <BookTour />
-          </Route>
-          <Route path="/login">
-            <Login />
-          </Route>
-          <Route path="/*">
-            <NotFound />
-          </Route>
-        </Switch>
-      </Router>
-    </ThemeProvider>
+    <AuthProvider>
+      <ThemeProvider theme={theme}>
+        <Router>
+          <Header />
+          <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route path="/home">
+              <Home />
+            </Route>
+            <Route path="/mytours">
+              <MyBookedTours />
+            </Route>
+            <Route path="/booktour">
+              <BookTour />
+            </Route>
+            <Route path="/login">
+              <Login />
+            </Route>
+            <Route path="/*">
+              <NotFound />
+            </Route>
+          </Switch>
+        </Router>
+      </ThemeProvider>
+    </AuthProvider>
   );
 }
 

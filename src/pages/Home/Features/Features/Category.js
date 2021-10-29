@@ -21,6 +21,7 @@ const Category = () => {
             xs={12}
             sm={6}
             md={4}
+            key={category._id}
             className="flex justify-center rounded-2xl"
           >
             <div>

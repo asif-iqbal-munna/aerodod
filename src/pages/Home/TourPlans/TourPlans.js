@@ -37,7 +37,7 @@ const TourPlans = () => {
         }}
       >
         {tourPlans.map((tourPlan) => (
-          <Card sx={{ maxWidth: 345 }}>
+          <Card sx={{ maxWidth: 345 }} key={tourPlan._id}>
             <CardActionArea>
               <CardMedia
                 component="img"
