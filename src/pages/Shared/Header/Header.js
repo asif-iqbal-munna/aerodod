@@ -12,8 +12,6 @@ import React, { useState } from "react";
 import { AccountCircle } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 
-
-
 const Header = () => {
   const [anchorEl, setAnchorEl] = useState(null);
 
@@ -65,9 +63,13 @@ const Header = () => {
                 open={Boolean(anchorEl)}
                 onClose={handleClose}
               >
-                <MenuItem onClick={handleClose}>My Orders</MenuItem>
-                <MenuItem onClick={handleClose}>Manage Orders</MenuItem>
-                <MenuItem onClick={handleClose}>My account</MenuItem>
+                <MenuItem>
+                  <Link to="/mytours">My Tours</Link>
+                </MenuItem>
+                <MenuItem>Manage Orders</MenuItem>
+                <MenuItem>
+                  <Link to="/login">Log In</Link>
+                </MenuItem>
               </Menu>
             </div>
           </Toolbar>

@@ -10,6 +10,7 @@ import {
 } from "@mui/material";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const TourPlans = () => {
   const [tourPlans, setTourPlans] = useState([]);
@@ -40,7 +41,7 @@ const TourPlans = () => {
             <CardActionArea>
               <CardMedia
                 component="img"
-                height="140"
+                height="100"
                 image={tourPlan?.img}
                 alt="green iguana"
               />
@@ -65,7 +66,11 @@ const TourPlans = () => {
                 </Typography>
               </CardContent>
               <div className="p-4">
-                <Button variant="contained">Book Now</Button>
+                <Link to="/booktour">
+                  <Button className="bg-blue-500" variant="contained">
+                    Book Now
+                  </Button>
+                </Link>
               </div>
             </CardActionArea>
           </Card>
