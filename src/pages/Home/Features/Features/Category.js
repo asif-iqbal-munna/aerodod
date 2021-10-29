@@ -13,8 +13,8 @@ const Category = () => {
   }, []);
 
   return (
-    <Container className="my-28">
-      <Grid Grid container spacing={8}>
+    <Container className="pb-28">
+      <Grid Grid container spacing={{ xs: 2, md: 8 }}>
         {categories.map((category) => (
           <Grid
             item

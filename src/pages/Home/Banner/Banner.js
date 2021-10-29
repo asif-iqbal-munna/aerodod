@@ -8,7 +8,7 @@ const useStyles = makeStyles({
     backgroundPosition: "center",
     height: "90vh",
     backgroundRepeat: "no-repeat",
-    backgroundSize: "coverF",
+    backgroundSize: "cover",
   },
 });
 
