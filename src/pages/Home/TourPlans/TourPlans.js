@@ -22,10 +22,6 @@ const TourPlans = () => {
       .catch((err) => console.log(err));
   }, []);
 
-  const handleBooking = () => {
-    
-  }
-
   return (
     <Container className="py-28">
       <h2 className="text-3xl capitalize text-dark pb-6 font-bold">
@@ -69,12 +65,8 @@ const TourPlans = () => {
                 </Typography>
               </CardContent>
               <div className="p-4">
-                <Link to="/booktour">
-                  <Button
-                    className="bg-blue-500"
-                    variant="contained"
-                    onClick={handleBooking}
-                  >
+                <Link to={`/booktour/${tourPlan._id}`}>
+                  <Button className="bg-blue-500" variant="contained">
                     Book Now
                   </Button>
                 </Link>

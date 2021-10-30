@@ -9,6 +9,7 @@ import NotFound from "../src/pages/NotFound/NotFound";
 import BookTour from "./pages/BookTour/BookTour";
 import Login from "./pages/Login/Login";
 import AuthProvider from "./Context/AuthProvider";
+import PrivateRoute from "./pages/Login/PrivateRoute";
 
 const theme = createTheme({
   palette: {
@@ -34,9 +35,9 @@ function App() {
             <Route path="/mytours">
               <MyBookedTours />
             </Route>
-            <Route path="/booktour">
+            <PrivateRoute path="/booktour/:id">
               <BookTour />
-            </Route>
+            </PrivateRoute>
             <Route path="/login">
               <Login />
             </Route>
