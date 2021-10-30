@@ -5,7 +5,7 @@ import Header from ".././src/pages/Shared/Header/Header";
 import { colors } from "@material-ui/core";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import MyBookedTours from "./pages/MyBookedTours/MyBookedTours";
-import { NotFound } from "http-errors";
+import NotFound from "../src/pages/NotFound/NotFound";
 import BookTour from "./pages/BookTour/BookTour";
 import Login from "./pages/Login/Login";
 import AuthProvider from "./Context/AuthProvider";
@@ -40,7 +40,7 @@ function App() {
             <Route path="/login">
               <Login />
             </Route>
-            <Route path="/*">
+            <Route path="*">
               <NotFound />
             </Route>
           </Switch>

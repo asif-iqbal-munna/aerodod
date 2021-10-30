@@ -24,7 +24,7 @@ const Header = () => {
     setAnchorEl(null);
   };
 
-  const { user } = useAuth();
+  const { user, logOut } = useAuth();
 
   return (
     <Box
@@ -72,9 +72,13 @@ const Header = () => {
                   <Link to="/mytours">My Tours</Link>
                 </MenuItem>
                 <MenuItem>Manage Orders</MenuItem>
-                <MenuItem>
-                  <Link to="/login">Log In</Link>
-                </MenuItem>
+                {!user?.displayName ? (
+                  <MenuItem>
+                    <Link to="/login">Log In</Link>
+                  </MenuItem>
+                ) : (
+                  <MenuItem onClick={logOut}>Log Out</MenuItem>
+                )}
               </Menu>
             </div>
           </Toolbar>

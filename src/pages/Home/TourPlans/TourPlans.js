@@ -22,13 +22,16 @@ const TourPlans = () => {
       .catch((err) => console.log(err));
   }, []);
 
+  const handleBooking = () => {
+    
+  }
+
   return (
     <Container className="py-28">
       <h2 className="text-3xl capitalize text-dark pb-6 font-bold">
         Tour Plans
       </h2>
       <Grid
-        Grid
         container
         className="justify-center"
         sx={{
@@ -67,7 +70,11 @@ const TourPlans = () => {
               </CardContent>
               <div className="p-4">
                 <Link to="/booktour">
-                  <Button className="bg-blue-500" variant="contained">
+                  <Button
+                    className="bg-blue-500"
+                    variant="contained"
+                    onClick={handleBooking}
+                  >
                     Book Now
                   </Button>
                 </Link>

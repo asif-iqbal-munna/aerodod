@@ -17,7 +17,7 @@ const DiscoverThings = () => {
       <h2 className="text-3xl capitalize text-dark pb-6 font-bold">
         Discover Things To DO
       </h2>
-      <Grid Grid container spacing={{ xs: 2, md: 8 }}>
+      <Grid container spacing={{ xs: 2, md: 8 }}>
         {discoverThings.map((discoverthing) => (
           <Grid
             item

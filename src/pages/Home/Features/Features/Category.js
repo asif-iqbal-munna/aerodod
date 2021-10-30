@@ -14,7 +14,7 @@ const Category = () => {
 
   return (
     <Container className="pb-28">
-      <Grid Grid container spacing={{ xs: 2, md: 8 }}>
+      <Grid container spacing={{ xs: 2, md: 8 }}>
         {categories.map((category) => (
           <Grid
             item

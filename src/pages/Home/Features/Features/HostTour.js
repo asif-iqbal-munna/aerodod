@@ -23,15 +23,14 @@ const HostTour = () => {
         <Grid container spacing={2}>
           <Grid item xs={12} md={5}>
             <div className="pt-20 pl-6">
-                <div className="pb-6"><h2 className="text-3xl font-bold text-white">Try Hosting</h2>
-              <p className="text-lg text-white">
-                Earn extra income and unlock new opportunities by sharing your
-                space
-              </p></div>
-              
-              <Button variant="contained">
-                Host
-              </Button>
+              <div className="pb-6">
+                <h2 className="text-3xl font-bold text-white">Try Hosting</h2>
+                <p className="text-lg text-white">
+                  Earn extra income and unlock new opportunities by sharing your
+                  space
+                </p>
+              </div>
+              <Button variant="contained">Host</Button>
             </div>
           </Grid>
         </Grid>
