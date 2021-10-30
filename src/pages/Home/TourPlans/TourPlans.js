@@ -40,7 +40,6 @@ const TourPlans = () => {
             <CardActionArea>
               <CardMedia
                 component="img"
-                height="100"
                 image={tourPlan?.img}
                 alt="green iguana"
               />

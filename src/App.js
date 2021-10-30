@@ -10,6 +10,7 @@ import BookTour from "./pages/BookTour/BookTour";
 import Login from "./pages/Login/Login";
 import AuthProvider from "./Context/AuthProvider";
 import PrivateRoute from "./pages/Login/PrivateRoute";
+import Footer from "./pages/Shared/Footer/Footer";
 
 const theme = createTheme({
   palette: {
@@ -32,9 +33,9 @@ function App() {
             <Route path="/home">
               <Home />
             </Route>
-            <Route path="/mytours">
+            <PrivateRoute path="/mytours">
               <MyBookedTours />
-            </Route>
+            </PrivateRoute>
             <PrivateRoute path="/booktour/:id">
               <BookTour />
             </PrivateRoute>
@@ -45,6 +46,7 @@ function App() {
               <NotFound />
             </Route>
           </Switch>
+          <Footer />
         </Router>
       </ThemeProvider>
     </AuthProvider>
