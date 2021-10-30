@@ -19,7 +19,7 @@ const BookTour = () => {
   const { id } = useParams();
 
   useEffect(() => {
-    const URI = `https://radiant-cove-26466.herokuapp.com/tourplans//${id}`;
+    const URI = `https://radiant-cove-26466.herokuapp.com/tourplans/${id}`;
     axios.get(URI).then((res) => {
       setTour(res.data);
       console.log(res.data);
