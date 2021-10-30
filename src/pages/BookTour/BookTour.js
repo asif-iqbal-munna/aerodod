@@ -15,6 +15,7 @@ const BookTour = () => {
     register,
     formState: { errors },
     handleSubmit,
+    reset,
   } = useForm();
 
   const { id } = useParams();
@@ -23,11 +24,22 @@ const BookTour = () => {
     const URI = `https://radiant-cove-26466.herokuapp.com/tourplans/${id}`;
     axios.get(URI).then((res) => {
       setTour(res.data);
-      console.log(res.data);
     });
   }, []);
 
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => {
+    data.tour = tour;
+    axios.post("http://localhost:8080/mytours", data ).then((res) => {
+      if (res.data.insertedId) {
+        alert(
+          "Congraulations, you have booked your tour. Thanks for staying with us."
+        );
+        reset();
+      }
+
+      console.log(res);
+    });
+  };
 
   return (
     <Container>
@@ -96,6 +108,7 @@ const BookTour = () => {
                 />
                 <div className="flex justify-between">
                   <TextField
+                    required
                     label="Check In"
                     type="date"
                     variant="filled"
@@ -106,6 +119,7 @@ const BookTour = () => {
                     }}
                   />
                   <TextField
+                    required
                     label="Check Out"
                     type="date"
                     variant="filled"
