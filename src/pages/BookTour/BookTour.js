@@ -8,6 +8,7 @@ import useAuth from "../../hooks/useAuth";
 
 const BookTour = () => {
   const [tour, setTour] = useState({});
+
   const { user } = useAuth();
 
   const {
@@ -93,6 +94,28 @@ const BookTour = () => {
                   margin="dense"
                   {...register("address", { required: true })}
                 />
+                <div className="flex justify-between">
+                  <TextField
+                    label="Check In"
+                    type="date"
+                    variant="filled"
+                    size="small"
+                    {...register("checkIn")}
+                    InputLabelProps={{
+                      shrink: true,
+                    }}
+                  />
+                  <TextField
+                    label="Check Out"
+                    type="date"
+                    variant="filled"
+                    size="small"
+                    {...register("checkOut")}
+                    InputLabelProps={{
+                      shrink: true,
+                    }}
+                  />
+                </div>
                 <TextField
                   required
                   label="Place"

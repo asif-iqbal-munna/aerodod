@@ -1,8 +1,9 @@
 import { Button, makeStyles } from "@material-ui/core";
 import React from "react";
 import GoogleIcon from "@mui/icons-material/Google";
-import useFirebase from "../../hooks/useFirebase";
 import { Box } from "@mui/system";
+import { useHistory, useLocation } from "react-router";
+import useAuth from "../../hooks/useAuth";
 
 const useStyles = makeStyles({
   bgBlue: {
@@ -14,10 +15,27 @@ const useStyles = makeStyles({
 });
 const Login = () => {
   const classes = useStyles();
-  const { signInWithGoogle } = useFirebase();
+  const { signInWithGoogle, setIsLoading , setError } = useAuth();
+
+  const history = useHistory();
+  const location = useLocation();
+  const redirectURI = location.state?.from || "/";
 
   const handleSignIn = () => {
-    signInWithGoogle();
+    setIsLoading(true);
+    signInWithGoogle()
+      .then((result) => {
+        const user = result.user;
+        // ...
+        history.push(redirectURI);
+      })
+      .catch((error) => {
+        // Handle Errors here.
+        const errorMessage = error.message;
+        setError(errorMessage);
+        // ...
+      })
+      .finally(() => setIsLoading(false));
   };
 
   return (
