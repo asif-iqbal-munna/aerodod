@@ -31,7 +31,7 @@ const useStyles = makeStyles({
 
 const ManageTours = () => {
   const [tourData, setTourData] = useState([]);
-  const [load, setLoad] = useState(false);
+  const [load, setLoad] = useState("");
 
   const classes = useStyles();
 
@@ -47,7 +47,7 @@ const ManageTours = () => {
       const URI = `https://radiant-cove-26466.herokuapp.com/mytours/${id}`;
       axios.delete(URI).then((res) => {
         alert("Succesfully deleted the tour");
-        setLoad(true);
+        setLoad("deleted");
       });
     }
   };
@@ -57,7 +57,7 @@ const ManageTours = () => {
     axios.put(URI).then((res) => {
       if (res.data.modifiedCount) {
         alert("Tour status is approved.");
-        setLoad(true);
+        setLoad("approved");
       }
     });
   };
