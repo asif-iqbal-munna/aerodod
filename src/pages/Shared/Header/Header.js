@@ -75,12 +75,15 @@ const Header = () => {
                 <li className="px-4 py-2">
                   <Link to="/managetours">Manage Tours</Link>
                 </li>
+                <li className="px-4 py-2">
+                  <Link to="/tourhost">Host A Tour</Link>
+                </li>
                 {!user?.displayName ? (
                   <li className="px-4 py-2">
                     <Link to="/login">Log In</Link>
                   </li>
                 ) : (
-                  <li className="px-4 py-2" onClick={logOut}>
+                  <li className="px-4 py-2 cursor-pointer" onClick={logOut}>
                     Log Out
                   </li>
                 )}

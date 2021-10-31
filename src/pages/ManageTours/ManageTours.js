@@ -6,9 +6,10 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-import { Button, Container, makeStyles } from "@material-ui/core";
+import { Container, makeStyles } from "@material-ui/core";
 import axios from "axios";
 import DeleteIcon from "@mui/icons-material/Delete";
+import useAuth from "../../hooks/useAuth";
 
 const useStyles = makeStyles({
   btnDelete: {
@@ -51,10 +52,10 @@ const ManageTours = () => {
     }
   };
 
-//   const handleStatusUpdate = (id) => {
-//     const URI = `https://radiant-cove-26466.herokuapp.com/mytours/${id}`;
-//     axios.put(URI, )
-//   };
+  //   const handleStatusUpdate = (id) => {
+  //     const URI = `https://radiant-cove-26466.herokuapp.com/mytours/${id}`;
+  //     axios.put(URI, )
+  //   };
 
   return (
     <Container className="my-20">
@@ -86,7 +87,7 @@ const ManageTours = () => {
                 <TableCell align="right">{row.status}</TableCell>
                 <TableCell align="right">
                   <button
-                    onClick={() => handleStatusUpdate(row._id)}
+                    // onClick={() => handleStatusUpdate(row._id)}
                     className="py-2 px-4 rounded-lg bg-green-500 text-white"
                   >
                     Approved
@@ -94,7 +95,7 @@ const ManageTours = () => {
                 </TableCell>
                 <TableCell align="right">
                   <DeleteIcon
-                    onClick={() => handleDeleteTour(row._id)}
+                    onClick={() => handleDeleteTour(row._id, row?.email)}
                     className={classes.btnDelete}
                   />
                 </TableCell>

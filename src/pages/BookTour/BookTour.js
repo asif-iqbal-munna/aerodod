@@ -39,8 +39,6 @@ const BookTour = () => {
           );
           reset();
         }
-
-        console.log(res);
       });
   };
 
@@ -146,7 +144,7 @@ const BookTour = () => {
                 <input
                   type="submit"
                   value="Place Order"
-                  className="bg-blue-500 py-2 px-8 text-white cursor-pointer mt-4 block ml-auto"
+                  className="bg-blue-500 py-2 px-8 text-white cursor-pointer mt-4 block ml-auto rounded-lg"
                 />
               </Box>
             )}

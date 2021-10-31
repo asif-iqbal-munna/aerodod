@@ -12,6 +12,7 @@ import AuthProvider from "./Context/AuthProvider";
 import PrivateRoute from "./pages/Login/PrivateRoute";
 import Footer from "./pages/Shared/Footer/Footer";
 import ManageTours from "./pages/ManageTours/ManageTours";
+import HostTour from "./pages/HostTour/HostTour";
 
 const theme = createTheme({
   palette: {
@@ -42,6 +43,9 @@ function App() {
             </PrivateRoute>
             <PrivateRoute path="/managetours">
               <ManageTours />
+            </PrivateRoute>
+            <PrivateRoute path="/tourhost">
+              <HostTour />
             </PrivateRoute>
             <Route path="/login">
               <Login />
