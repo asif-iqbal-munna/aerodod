@@ -5,7 +5,6 @@ import {
   IconButton,
   Typography,
   Menu,
-  MenuItem,
   Container,
 } from "@mui/material";
 import React, { useState } from "react";
@@ -73,7 +72,9 @@ const Header = () => {
                 <li className="px-4 py-2">
                   <Link to="/mytours">My Tours</Link>
                 </li>
-                <li className="px-4 py-2">Manage Orders</li>
+                <li className="px-4 py-2">
+                  <Link to="/managetours">Manage Tours</Link>
+                </li>
                 {!user?.displayName ? (
                   <li className="px-4 py-2">
                     <Link to="/login">Log In</Link>

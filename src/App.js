@@ -11,6 +11,7 @@ import Login from "./pages/Login/Login";
 import AuthProvider from "./Context/AuthProvider";
 import PrivateRoute from "./pages/Login/PrivateRoute";
 import Footer from "./pages/Shared/Footer/Footer";
+import ManageTours from "./pages/ManageTours/ManageTours";
 
 const theme = createTheme({
   palette: {
@@ -38,6 +39,9 @@ function App() {
             </PrivateRoute>
             <PrivateRoute path="/booktour/:id">
               <BookTour />
+            </PrivateRoute>
+            <PrivateRoute path="/managetours">
+              <ManageTours />
             </PrivateRoute>
             <Route path="/login">
               <Login />
