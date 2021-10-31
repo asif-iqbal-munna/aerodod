@@ -29,7 +29,8 @@ const BookTour = () => {
 
   const onSubmit = (data) => {
     data.tour = tour;
-    axios.post("http://localhost:8080/mytours", data ).then((res) => {
+    data.status = "pending";
+    axios.post("http://localhost:8080/mytours", data).then((res) => {
       if (res.data.insertedId) {
         alert(
           "Congraulations, you have booked your tour. Thanks for staying with us."

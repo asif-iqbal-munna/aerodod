@@ -67,17 +67,21 @@ const Header = () => {
                 open={Boolean(anchorEl)}
                 onClose={handleClose}
               >
-                <MenuItem>{user?.displayName ? user.displayName : ""}</MenuItem>
-                <MenuItem>
+                <li className="px-4 py-2">
+                  {user?.displayName ? user.displayName : ""}
+                </li>
+                <li className="px-4 py-2">
                   <Link to="/mytours">My Tours</Link>
-                </MenuItem>
-                <MenuItem>Manage Orders</MenuItem>
+                </li>
+                <li className="px-4 py-2">Manage Orders</li>
                 {!user?.displayName ? (
-                  <MenuItem>
+                  <li className="px-4 py-2">
                     <Link to="/login">Log In</Link>
-                  </MenuItem>
+                  </li>
                 ) : (
-                  <MenuItem onClick={logOut}>Log Out</MenuItem>
+                  <li className="px-4 py-2" onClick={logOut}>
+                    Log Out
+                  </li>
                 )}
               </Menu>
             </div>

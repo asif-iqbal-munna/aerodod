@@ -8,6 +8,8 @@ import useAuth from "../../hooks/useAuth";
 const useStyles = makeStyles({
   bgBlue: {
     backgroundColor: "#2196F3",
+    display: "block",
+    margin: "0 auto",
     "&:hover": {
       backgroundColor: "#2196F3",
     },
@@ -15,7 +17,7 @@ const useStyles = makeStyles({
 });
 const Login = () => {
   const classes = useStyles();
-  const { signInWithGoogle, setIsLoading , setError } = useAuth();
+  const { signInWithGoogle, setIsLoading, setError } = useAuth();
 
   const history = useHistory();
   const location = useLocation();
@@ -25,7 +27,6 @@ const Login = () => {
     setIsLoading(true);
     signInWithGoogle()
       .then((result) => {
-        const user = result.user;
         // ...
         history.push(redirectURI);
       })
@@ -39,7 +40,7 @@ const Login = () => {
   };
 
   return (
-    <Box className="w-4/5 md:w-1/3 mt-20 md:mt-40 p-20 h-42 mx-auto bg-gray-100">
+    <Box className="w-4/5 md:w-2/3 my-20 md:my-40 p-6 mx-auto md:p-10 lg:p-20  h-42 bg-gray-100">
       <Box>
         <Button
           variant="contained"
