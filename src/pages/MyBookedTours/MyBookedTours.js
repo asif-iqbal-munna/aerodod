@@ -60,7 +60,7 @@ const MyBookedTours = () => {
                 </h2>
                 <p className="text-base">{tour?.data?.extraInfo}</p>
                 <div className="flex justify-between px-6 py-2">
-                  <p className="text-base font-bolder mt-4 py-2 px-4 bg-red-200 rounded-lg">
+                  <p className="text-base font-bolder mt-4 py-2 px-4 bg-red-200 rounded-lg text-blue-800 capitalize font-bold">
                     {tour?.status}
                   </p>
                   <Button
