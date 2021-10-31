@@ -30,16 +30,18 @@ const BookTour = () => {
   const onSubmit = (data) => {
     data.tour = tour;
     data.status = "pending";
-    axios.post("http://localhost:8080/mytours", data).then((res) => {
-      if (res.data.insertedId) {
-        alert(
-          "Congraulations, you have booked your tour. Thanks for staying with us."
-        );
-        reset();
-      }
+    axios
+      .post("https://radiant-cove-26466.herokuapp.com/mytours", data)
+      .then((res) => {
+        if (res.data.insertedId) {
+          alert(
+            "Congraulations, you have booked your tour. Thanks for staying with us."
+          );
+          reset();
+        }
 
-      console.log(res);
-    });
+        console.log(res);
+      });
   };
 
   return (

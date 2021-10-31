@@ -35,9 +35,13 @@ const ManageTours = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/mytours")
+      .get("https://radiant-cove-26466.herokuapp.com/mytours")
       .then((res) => setTourData(res.data));
   }, []);
+
+  const handleStatusUpdate = (id) => {
+    const URI = ``
+  }
 
   console.log(tourData);
 
@@ -70,7 +74,10 @@ const ManageTours = () => {
                 <TableCell align="right">{row.email}</TableCell>
                 <TableCell align="right">{row.status}</TableCell>
                 <TableCell align="right">
-                  <button className="py-2 px-4 rounded-lg bg-green-500 text-white">
+                  <button
+                    onClick={() => handleStatusUpdate(row._id)}
+                    className="py-2 px-4 rounded-lg bg-green-500 text-white"
+                  >
                     Approved
                   </button>
                 </TableCell>

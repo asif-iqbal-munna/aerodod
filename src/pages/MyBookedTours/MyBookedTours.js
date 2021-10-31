@@ -25,7 +25,7 @@ const MyBookedTours = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8080/mytours/${user.email}`)
+      .get(`https://radiant-cove-26466.herokuapp.com/${user.email}`)
       .then((res) => setMyTours(res.data))
       .catch((err) => console.log(err));
   }, [user.email, load]);
@@ -33,7 +33,7 @@ const MyBookedTours = () => {
   const handleDelete = (id) => {
     const procced = window.confirm("Are you sure you want to delete the user?");
     if (procced) {
-      const URI = `http://localhost:8080/mytours/${id}`;
+      const URI = `https://radiant-cove-26466.herokuapp.com/mytours/${id}`;
       axios.delete(URI).then((res) => {
         alert("Succesfully deleted the tour");
       });
