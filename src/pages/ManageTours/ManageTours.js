@@ -52,10 +52,15 @@ const ManageTours = () => {
     }
   };
 
-  //   const handleStatusUpdate = (id) => {
-  //     const URI = `https://radiant-cove-26466.herokuapp.com/mytours/${id}`;
-  //     axios.put(URI, )
-  //   };
+  const handleStatusUpdate = (id) => {
+    const URI = `http://localhost:8080/mytours/${id}`;
+    axios.put(URI).then((res) => {
+      if (res.data.modifiedCount) {
+        alert("Tour status is approved.");
+        setLoad(true);
+      }
+    });
+  };
 
   return (
     <Container className="my-20">
@@ -87,7 +92,7 @@ const ManageTours = () => {
                 <TableCell align="right">{row.status}</TableCell>
                 <TableCell align="right">
                   <button
-                    // onClick={() => handleStatusUpdate(row._id)}
+                    onClick={() => handleStatusUpdate(row._id)}
                     className="py-2 px-4 rounded-lg bg-green-500 text-white"
                   >
                     Approved
