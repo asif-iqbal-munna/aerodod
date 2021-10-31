@@ -18,7 +18,7 @@ const useStyles = makeStyles({
 
 const MyBookedTours = () => {
   const [myTours, setMyTours] = useState([]);
-  const [load, setLoad] = useState();
+  const [load, setLoad] = useState(false);
 
   const classes = useStyles();
   const { user } = useAuth();
@@ -36,8 +36,8 @@ const MyBookedTours = () => {
       const URI = `https://radiant-cove-26466.herokuapp.com/mytours/${id}`;
       axios.delete(URI).then((res) => {
         alert("Succesfully deleted the tour");
+        setLoad(true);
       });
-      setLoad(true);
     }
   };
 
@@ -60,7 +60,7 @@ const MyBookedTours = () => {
                 </h2>
                 <p className="text-base">{tour?.data?.extraInfo}</p>
                 <div className="flex justify-between px-6 py-2">
-                  <p className="text-base font-bolder mt-4 py-2 px-4 bg-red-200 rounded-lg text-blue-500 font-bold">
+                  <p className="text-base font-bolder mt-4 py-2 px-4 bg-red-200 rounded-lg text-blue-500 capitalize font-bold">
                     {tour?.status}
                   </p>
                   <Button

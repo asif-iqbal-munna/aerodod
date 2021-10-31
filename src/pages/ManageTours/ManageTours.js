@@ -30,6 +30,7 @@ const useStyles = makeStyles({
 
 const ManageTours = () => {
   const [tourData, setTourData] = useState([]);
+  const [load, setLoad] = useState(false);
 
   const classes = useStyles();
 
@@ -37,13 +38,23 @@ const ManageTours = () => {
     axios
       .get("https://radiant-cove-26466.herokuapp.com/mytours")
       .then((res) => setTourData(res.data));
-  }, []);
+  }, [load]);
 
-  const handleStatusUpdate = (id) => {
-    const URI = ``
-  }
+  const handleDeleteTour = (id) => {
+    const procced = window.confirm("Are you sure you want to delete the user?");
+    if (procced) {
+      const URI = `https://radiant-cove-26466.herokuapp.com/mytours/${id}`;
+      axios.delete(URI).then((res) => {
+        alert("Succesfully deleted the tour");
+        setLoad(true);
+      });
+    }
+  };
 
-  console.log(tourData);
+//   const handleStatusUpdate = (id) => {
+//     const URI = `https://radiant-cove-26466.herokuapp.com/mytours/${id}`;
+//     axios.put(URI, )
+//   };
 
   return (
     <Container className="my-20">
@@ -82,7 +93,10 @@ const ManageTours = () => {
                   </button>
                 </TableCell>
                 <TableCell align="right">
-                  <DeleteIcon className={classes.btnDelete} />
+                  <DeleteIcon
+                    onClick={() => handleDeleteTour(row._id)}
+                    className={classes.btnDelete}
+                  />
                 </TableCell>
               </TableRow>
             ))}
