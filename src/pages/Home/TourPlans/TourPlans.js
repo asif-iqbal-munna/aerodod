@@ -11,6 +11,7 @@ import {
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
 
 const TourPlans = () => {
   const [tourPlans, setTourPlans] = useState([]);
@@ -65,8 +66,12 @@ const TourPlans = () => {
               </CardContent>
               <div className="p-4">
                 <Link to={`/booktour/${tourPlan._id}`}>
-                  <Button className="bg-blue-500" variant="contained">
+                  <Button
+                    className="bg-blue-500 text-white"
+                    variant="contained"
+                  >
                     Book Now
+                    <CalendarTodayIcon />
                   </Button>
                 </Link>
               </div>

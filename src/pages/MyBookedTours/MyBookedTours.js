@@ -79,7 +79,7 @@ const MyBookedTours = () => {
   } else {
     return (
       <div className="my-20">
-        <div className="bg-gray-200 p-20 w-3/5 mx-auto">
+        <div className="bg-gray-200 p-6 md:p-20 w-11/12 md:w-3/5 mx-auto">
           <h3 className="text-2xl text-red-300">
             There is no tours booked by you. Your Tour List is empty
           </h3>

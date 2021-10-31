@@ -25,7 +25,7 @@ const HostTour = () => {
   return (
     <Grid container spacing={2}>
       <Grid item xs={12}>
-        <Box className="w-11/12 md:w-3/5 px-12 my-20 mx-auto bg-gray-100 py-12 rounded-3xl ">
+        <Box className="w-11/12 md:w-3/5 px-4 md:px-12 my-20 mx-auto bg-gray-100 py-12 rounded-3xl ">
           <h2 className="text-3xl capitalize text-dark pb-6 font-bold">
             Book Tours
           </h2>

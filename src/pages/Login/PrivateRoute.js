@@ -8,8 +8,8 @@ const PrivateRoute = ({ children, ...rest }) => {
 
   if (isLoading) {
     return (
-      <div className="mt-12 flex justify-center">
-        <CircularProgress color="success" />
+      <div className="my-12 flex justify-center">
+        <CircularProgress />
       </div>
     );
   } else {

@@ -1,8 +1,7 @@
 import { Container } from "@mui/material";
 import React from "react";
 import Category from "./Category";
-import HostTour from "./HostTour";
-
+import HostBanner from "./HostBanner";
 const Features = () => {
   return (
     <Container className="my-28">
@@ -10,7 +9,7 @@ const Features = () => {
         Live Anywhere
       </h2>
       <Category />
-      <HostTour />
+      <HostBanner />
     </Container>
   );
 };

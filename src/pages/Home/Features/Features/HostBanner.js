@@ -2,6 +2,7 @@ import { Box } from "@mui/system";
 import React from "react";
 import { makeStyles } from "@material-ui/core";
 import { Button, Container, Grid } from "@mui/material";
+import AdminPanelSettingsIcon from "@mui/icons-material/AdminPanelSettings";
 
 const useStyles = makeStyles({
   hostImg: {
@@ -15,7 +16,7 @@ const useStyles = makeStyles({
   },
 });
 
-const HostTour = () => {
+const HostBanner = () => {
   const classes = useStyles();
   return (
     <Container className="rounded-3xl">
@@ -30,7 +31,9 @@ const HostTour = () => {
                   space
                 </p>
               </div>
-              <Button variant="contained">Host</Button>
+              <Button variant="contained">
+                Host <AdminPanelSettingsIcon />
+              </Button>
             </div>
           </Grid>
         </Grid>
@@ -39,4 +42,4 @@ const HostTour = () => {
   );
 };
 
-export default HostTour;
+export default HostBanner;
