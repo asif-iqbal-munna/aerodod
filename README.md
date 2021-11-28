@@ -2,7 +2,7 @@
 
 ## [Site Live Link](https://aerodod-3736a.firebaseapp.com/)
 
-### [Server Side Github Link](https://github.com/programming-hero-web-course1/tourism-or-delivery-website-server-side-asif-iqbal-munna)
+### [Server Side Github Link](https://github.com/asif-iqbal-munna/aerodod-server)
 
 ### aerodod is a Travel & Tourism related website where people can host a tour by themselves and others who are interested in a tour can join the hosted tour.
 
