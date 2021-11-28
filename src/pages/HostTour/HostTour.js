@@ -29,6 +29,7 @@ const HostTour = () => {
           <h2 className="text-3xl capitalize text-dark pb-6 font-bold">
             Book Tours
           </h2>
+
           <Box component="form" onSubmit={handleSubmit(onSubmit)}>
             <TextField
               required
